@@ -1,0 +1,101 @@
+body {
+  font-family: "Averia Libre";
+  background: #424874;
+  color: #f4eeff;
+
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image:
+    radial-gradient(25% 25% at 25% 25%, #424874 99%, transparent 101%),
+    radial-gradient(25% 25% at 25% 25%, #424874 99%, transparent 101%),
+    radial-gradient(50% 50%, #7a82a5 98%, transparent),
+    repeating-conic-gradient(#7a82a5 0 25%, #424874 0 50%);
+
+  background-position:
+    50px 50px,
+    0 0,
+    0 0,
+    25px 0;
+  background-size:
+    100px 100px,
+    100px 100px,
+    50px 50px,
+    100px 50px;
+}
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 50px;
+}
+.first-color {
+  background: #f4eeff;
+}
+
+.second-color {
+  background: #dcd6f7;
+}
+
+.third-color {
+  background: #a6b1e1;
+}
+
+.fourth-color {
+  background: #424874;
+}
+.Level {
+  margin-top: 50px;
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #dcd6f7;
+  color: #424874;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+}
+.mittig {
+  display: flex;
+  justify-content: center;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 40px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 40px;
+  background: #a6b1e1;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background: #a6b1e1;
+  cursor: pointer;
+}
+input {
+  text-align: center;
+  font-family: "Averia Libre";
+  color: black;
+  width: 60%;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 8px;
+  border: black;
+  margin: 10px auto;
+  display: block;
+}
+img {
+  display: block;
+  margin: 10px auto;
+}

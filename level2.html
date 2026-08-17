@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cause:wght@100..900&family=Chango&family=Coiny&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kurale&family=Londrina+Solid:wght@100;300;400;900&family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<h1>Regler richtig schieben</h1>
+</header>
+<main class="mittig">
+<label>Anzahl der Regenbogenfarben:<br><input type="range" id="r1" min="0" max="20" value="0" class="slider"><br>
+<label>Planeten im Sonnensystem:<br><input type="range" id="r2" min="0" max="20" value="0" class="slider"><br>
+<label>Anzahl der Beine einer Spinne:<br><input type="range" id="r3" min="0" max="20" value="0" class="slider"><br>
+<label>Nachbarländer Deutschlands:<br><input type="range" id="r4" min="0" max="20" value="0" class="slider"><br>
+<label>Anzahl der Sinne des Menschen:<br><input type="range" id="r5" min="0" max="20" value="0" class="slider"><br>
+
+<button id="levelbutton" class="Level" onclick="NextLevel()" style="display: none;">LEVEL 2 ➜</button>
+</main> 
+<script>
+let r1 = document.getElementById("r1");
+let r2 = document.getElementById("r2");
+let r3 = document.getElementById("r3");
+let r4 = document.getElementById("r4");
+let r5 = document.getElementById("r5");
+
+function NextLevel(){
+    window.open("level3.html", "_self");
+}
+function LevelFertig(){
+    document.getElementById("levelbutton").style="display: block"
+}
+function Check(){
+console.log(r1.value);
+    if(r1.value >= 7 && r1.value <= 7 && r2.value >= 7 && r2.value <= 9 && r3.value >= 7 && r3.value <= 9
+        && r4.value >= 8 && r4.value <= 10 && r5.value >= 4 && r5.value <= 6){
+            LevelFertig();
+    } else{
+        document.getElementById("levelbutton").style="display: none"
+    }
+}
+setInterval(Check, 100)
+</script>
+</body>
+</html>

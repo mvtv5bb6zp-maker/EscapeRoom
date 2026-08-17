@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cause:wght@100..900&family=Chango&family=Coiny&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kurale&family=Londrina+Solid:wght@100;300;400;900&family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<h1>Errate was ich gemalt hab</h1>
+</header>
+<main>
+<img src="Benz.png" width="300">
+<input id="i1">
+<div id="a1" class="mittig" style="color: red; font-size: 20px;">✘</div>
+<img src="Merkel.png" width="300">
+<input id="i2">
+<div id="a2" class="mittig" style="color: red; font-size: 20px;">✘</div>
+<img src="Twoiback.png" width="300">
+<input id="i3">
+<div id="a3" class="mittig" style="color: red; font-size: 20px;">✘</div>
+<img src="Aktien.png" width="300">
+<input id="i4">
+<div id="a4" class="mittig" style="color: red; font-size: 20px;">✘</div>
+<img src="Taube.png" width="300">
+<input id="i5">
+<div id="a5" class="mittig" style="color: red; font-size: 20px;">✘</div>
+<button id="levelbutton" class="Level" onclick="NextLevel()" style="display: none;">LEVEL 3 ➜</button>
+</main> 
+<script>
+let r1 = document.getElementById("i1");
+let r2 = document.getElementById("i2");
+let r3 = document.getElementById("i3");
+let r4 = document.getElementById("i4");
+let r5 = document.getElementById("i5");
+
+function NextLevel(){
+    window.open("level4.html", "_self");
+}
+function LevelFertig(){
+    document.getElementById("levelbutton").style="display: block"
+}
+function Check(){
+    if(r1.value == "Benz"){
+        document.getElementById("a1").innerText = "✓";
+        document.getElementById("a1").style = "color: green; font-size: 30px";
+    } else{
+        document.getElementById("a1").innerText = "✘";
+        document.getElementById("a1").style = "color: red; font-size: 30px";
+    }
+    if(r2.value == "Merkel"){
+        document.getElementById("a2").innerText = "✓";
+        document.getElementById("a2").style = "color: green; font-size: 30px";
+    } else{
+        document.getElementById("a2").innerText = "✘";
+        document.getElementById("a2").style = "color: red; font-size: 30px";
+    }
+    if(r3.value == "Twoiback"){
+        document.getElementById("a3").innerText = "✓";
+        document.getElementById("a3").style = "color: green; font-size: 30px";
+    } else{
+        document.getElementById("a3").innerText = "✘";
+        document.getElementById("a3").style = "color: red; font-size: 30px";
+    }
+    if(r4.value == "Aktien"){
+        document.getElementById("a4").innerText = "✓";
+        document.getElementById("a4").style = "color: green; font-size: 30px";
+    } else{
+        document.getElementById("a4").innerText = "✘";
+        document.getElementById("a4").style = "color: red; font-size: 30px";
+    }
+    if(r5.value == "Taube"){
+        document.getElementById("a5").innerText = "✓";
+        document.getElementById("a5").style = "color: green; font-size: 30px";
+    } else{
+        document.getElementById("a5").innerText = "✘";
+        document.getElementById("a5").style = "color: red; font-size: 30px";
+    }
+    if(r1.value == "Benz" && r2.value == "Merkel" && r3.value == "Twoiback" && r4.value == "Aktien"
+        && r5.value == "Taube"){
+            LevelFertig();
+        } else{
+            document.getElementById("levelbutton").style="display: none"
+        }
+}
+setInterval(Check, 100);
+</script>
+</body>
+</html>

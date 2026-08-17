@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style2.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cause:wght@100..900&family=Chango&family=Coiny&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kurale&family=Londrina+Solid:wght@100;300;400;900&family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<h1>Beantworte die Frage, sonst geht die Bombe hoch!</h1>
+</header>
+<main>
+<p style="text-align: center;">Die Shanonzahl ist:</p>
+<input id="i1">
+<div id="a1" class="mittig" style="color: red; font-size: 20px; text-align: center;">✘</div>
+<button id="levelbutton" class="Level" onclick="NextLevel()" style="display: none;">FERTIG ➜</button>
+<div class="wrapper">
+    <div id="countdown">01:00</div>
+</div>
+<img src="bombe.png" width="200px">
+</main> 
+<script>
+let r1 = document.getElementById("i1");
+
+function NextLevel(){
+    window.open("fertig.html", "_self");
+}
+function LevelFertig(){
+    document.getElementById("levelbutton").style="display: block";
+}
+function Check(){
+    if(r1.value == "10 hoch 80 ungefähr"){
+        document.getElementById("a1").innerText = "✓";
+        document.getElementById("a1").style = "color: green; font-size: 30px; text-align: center;";
+        LevelFertig();
+    } else{
+        document.getElementById("a1").innerText = "✘";
+        document.getElementById("a1").style = "color: red; font-size: 30px; text-align: center;";
+        document.getElementById("levelbutton").style="display: none";
+    }
+}
+setInterval(Check, 100);
+
+
+
+
+// =========================
+    // STARTZEIT HIER ÄNDERN
+    // =========================
+
+    let zeit = 1 * 60; // 2 Minuten
+
+    function countdown() {
+
+        let minuten = Math.floor(zeit / 60);
+        let sekunden = zeit % 60;
+
+        minuten = String(minuten).padStart(2, "0");
+        sekunden = String(sekunden).padStart(2, "0");
+
+        document.getElementById("countdown").textContent =
+            minuten + ":" + sekunden;
+
+        if (zeit > 0) {
+            zeit--;
+        } else {
+            clearInterval(timer);
+            console.log("Zeit abgelaufen!");
+            window.open("gameOver.html", "_self");
+        }
+    }
+
+    countdown();
+
+    let timer = setInterval(countdown, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cause:wght@100..900&family=Chango&family=Coiny&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kurale&family=Londrina+Solid:wght@100;300;400;900&family=Oleo+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .gameover-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      body {
+        background-color: #424874;
+        color: #f4eeff;
+        font-family: "Averia Libre";
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wavy span {
+        display: inline-block;
+        animation: wave 2s ease-in-out infinite alternate;
+      }
+      .mittig {
+        display: flex;
+        justify-content: center;
+      }
+      .Level {
+        padding: 12.5px 30px;
+        border: 0;
+        border-radius: 100px;
+        background-color: #dcd6f7;
+        color: #424874;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      @keyframes wave {
+        from {
+          transform: translateY(-20px);
+        }
+
+        to {
+          transform: translateY(20px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="gameover-container">
+      <div class="container">
+        <h1><span class="wavy">Game Over</span></h1>
+      </div>
+      <br /><br /><br /><br /><br />
+      <button class="Level" onclick="wieder()">Nochmal versuchen</button>
+    </div>
+
+    <script>
+      const text = document.querySelector(".wavy");
+
+      // Jeden Buchstaben einzeln animieren
+      text.innerHTML = text.textContent
+        .split("")
+        .map((char, index) => {
+          if (char === " ") {
+            return " ";
+          }
+
+          return `<span style="animation-delay: ${index * 0.15}s">${char}</span>`;
+        })
+        .join("");
+
+      function wieder() {
+        window.open("level4.html", "_self");
+      }
+    </script>
+  </body>
+</html>
